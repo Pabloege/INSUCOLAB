@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Laboratorios | INSUCOLAB</title>
+
+    <meta
+        name="description"
+        content="Consulta la información de los laboratorios de computación del Liceo Insuco de Valparaíso."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         BARRA DE NAVEGACIÓN
+    ========================== -->
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                INSUCOLAB
+            </a>
+
+            <button
+                type="button"
+                class="menu-movil"
+                id="menuMovil"
+                aria-label="Abrir menú"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+
+                <li>
+                    <a href="index.html">
+                        Inicio
+                    </a>
+                </li>
+
+                <li>
+                    <a href="laboratorios.html" class="activo">
+                        Laboratorios
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#informacion">
+                        Información
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         CONTENIDO PRINCIPAL
+    ========================== -->
+    <main>
+
+        <!-- ENCABEZADO -->
+        <section class="encabezado-laboratorios">
+
+            <div>
+
+                <span class="etiqueta">
+                    INSUCOLAB
+                </span>
+
+                <h1>
+                    Laboratorios
+                </h1>
+
+                <p>
+                    Consulta la información y el estado de los
+                    laboratorios de computación del Liceo Insuco
+                    de Valparaíso.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             BUSCADOR Y FILTROS
+        ========================== -->
+        <section class="seccion filtros-seccion">
+
+            <div class="encabezado-seccion">
+
+                <span class="etiqueta">
+                    Buscar
+                </span>
+
+                <h2>
+                    Encuentra un laboratorio
+                </h2>
+
+                <p>
+                    Utiliza el buscador o los filtros para encontrar
+                    rápidamente la información que necesitas.
+                </p>
+
+            </div>
+
+
+            <div class="filtros-laboratorios">
+
+                <div class="campo-filtro">
+
+                    <label for="buscadorLaboratorio">
+                        Buscar por nombre
+                    </label>
+
+                    <input
+                        type="search"
+                        id="buscadorLaboratorio"
+                        placeholder="Ejemplo: Laboratorio 1"
+                    >
+
+                </div>
+
+
+                <div class="campo-filtro">
+
+                    <label for="filtroSistema">
+                        Sistema operativo
+                    </label>
+
+                    <select id="filtroSistema">
+
+                        <option value="todos">
+                            Todos
+                        </option>
+
+                        <option value="windows">
+                            Windows 11
+                        </option>
+
+                        <option value="linux">
+                            Linux Mint
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo-filtro">
+
+                    <label for="filtroRam">
+                        Memoria RAM
+                    </label>
+
+                    <select id="filtroRam">
+
+                        <option value="todos">
+                            Todas
+                        </option>
+
+                        <option value="4">
+                            4 GB
+                        </option>
+
+                        <option value="16">
+                            16 GB
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="limpiarFiltros"
+                    class="boton boton-secundario"
+                >
+                    Limpiar filtros
+                </button>
+
+            </div>
+
+
+            <div class="resultado-filtros">
+
+                <span id="cantidadResultados">
+                    Mostrando 5 laboratorios
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LISTADO DE LABORATORIOS
+        ========================== -->
+        <section class="lista-laboratorios">
+
+
+            <!-- =========================
+                 LABORATORIO 1
+            ========================== -->
+            <article
+                class="laboratorio-detalle tarjeta-laboratorio"
+                id="lab1"
+                data-nombre="Laboratorio 1"
+                data-sistema="windows"
+                data-ram="16"
+            >
+
+                <div class="laboratorio-imagenes">
+
+                    <img
+                        src="img/lab1-1.jpg"
+                        alt="Laboratorio 1 - Vista 1"
+                        class="foto-galeria"
+                        data-laboratorio="1"
+                    >
+
+                    <img
+                        src="img/lab1-2.jpg"
+                        alt="Laboratorio 1 - Vista 2"
+                        class="foto-galeria"
+                        data-laboratorio="1"
+                    >
+
+                </div>
+
+
+                <div class="laboratorio-informacion">
+
+                    <span class="numero-laboratorio">
+                        LABORATORIO 01
+                    </span>
+
+                    <h2>
+                        Laboratorio 1
+                    </h2>
+
+                    <p class="descripcion-laboratorio">
+                        Laboratorio destinado al desarrollo de
+                        actividades prácticas y académicas
+                        relacionadas con computación.
+                    </p>
+
+
+                    <div class="datos-laboratorio">
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Sistema operativo
+                            </span>
+
+                            <strong>
+                                Windows 11
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Memoria RAM
+                            </span>
+
+                            <strong>
+                                16 GB
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Equipos
+                            </span>
+
+                            <strong>
+                                30 computadores
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Estado
+                            </span>
+
+                            <strong class="estado pendiente">
+                                Por determinar
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="disponibilidad">
+
+                        <h3>
+                            Disponibilidad
+                        </h3>
+
+                        <p>
+                            La información de horarios y
+                            disponibilidad será incorporada
+                            próximamente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 LABORATORIO 2
+            ========================== -->
+            <article
+                class="laboratorio-detalle tarjeta-laboratorio"
+                id="lab2"
+                data-nombre="Laboratorio 2"
+                data-sistema="windows"
+                data-ram="16"
+            >
+
+                <div class="laboratorio-imagenes">
+
+                    <img
+                        src="img/lab2-1.jpg"
+                        alt="Laboratorio 2 - Vista 1"
+                        class="foto-galeria"
+                        data-laboratorio="2"
+                    >
+
+                    <img
+                        src="img/lab2-2.jpg"
+                        alt="Laboratorio 2 - Vista 2"
+                        class="foto-galeria"
+                        data-laboratorio="2"
+                    >
+
+                </div>
+
+
+                <div class="laboratorio-informacion">
+
+                    <span class="numero-laboratorio">
+                        LABORATORIO 02
+                    </span>
+
+                    <h2>
+                        Laboratorio 2
+                    </h2>
+
+                    <p class="descripcion-laboratorio">
+                        Espacio destinado al desarrollo de
+                        actividades académicas utilizando
+                        equipamiento computacional.
+                    </p>
+
+
+                    <div class="datos-laboratorio">
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Sistema operativo
+                            </span>
+
+                            <strong>
+                                Windows 11
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Memoria RAM
+                            </span>
+
+                            <strong>
+                                16 GB
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Equipos
+                            </span>
+
+                            <strong>
+                                27 computadores
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Estado
+                            </span>
+
+                            <strong class="estado pendiente">
+                                Por determinar
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="disponibilidad">
+
+                        <h3>
+                            Disponibilidad
+                        </h3>
+
+                        <p>
+                            La información de horarios y
+                            disponibilidad será incorporada
+                            próximamente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 LABORATORIO 3
+            ========================== -->
+            <article
+                class="laboratorio-detalle tarjeta-laboratorio"
+                id="lab3"
+                data-nombre="Laboratorio 3"
+                data-sistema="linux"
+                data-ram="4"
+            >
+
+                <div class="laboratorio-imagenes">
+
+                    <img
+                        src="img/lab3-1.jpg"
+                        alt="Laboratorio 3 - Vista 1"
+                        class="foto-galeria"
+                        data-laboratorio="3"
+                    >
+
+                    <img
+                        src="img/lab3-2.jpg"
+                        alt="Laboratorio 3 - Vista 2"
+                        class="foto-galeria"
+                        data-laboratorio="3"
+                    >
+
+                </div>
+
+
+                <div class="laboratorio-informacion">
+
+                    <span class="numero-laboratorio">
+                        LABORATORIO 03
+                    </span>
+
+                    <h2>
+                        Laboratorio 3
+                    </h2>
+
+                    <p class="descripcion-laboratorio">
+                        Espacio de trabajo destinado a actividades
+                        prácticas y académicas con equipos
+                        computacionales.
+                    </p>
+
+
+                    <div class="datos-laboratorio">
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Sistema operativo
+                            </span>
+
+                            <strong>
+                                Linux Mint
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Memoria RAM
+                            </span>
+
+                            <strong>
+                                4 GB
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Equipos
+                            </span>
+
+                            <strong>
+                                28 computadores
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Estado
+                            </span>
+
+                            <strong class="estado pendiente">
+                                Por determinar
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="disponibilidad">
+
+                        <h3>
+                            Disponibilidad
+                        </h3>
+
+                        <p>
+                            La información de horarios y
+                            disponibilidad será incorporada
+                            próximamente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 LABORATORIO 4
+            ========================== -->
+            <article
+                class="laboratorio-detalle tarjeta-laboratorio"
+                id="lab4"
+                data-nombre="Laboratorio 4"
+                data-sistema="windows"
+                data-ram="16"
+            >
+
+                <div class="laboratorio-imagenes">
+
+                    <img
+                        src="img/lab4-1.jpg"
+                        alt="Laboratorio 4 - Vista 1"
+                        class="foto-galeria"
+                        data-laboratorio="4"
+                    >
+
+                    <img
+                        src="img/lab4-2.jpg"
+                        alt="Laboratorio 4 - Vista 2"
+                        class="foto-galeria"
+                        data-laboratorio="4"
+                    >
+
+                </div>
+
+
+                <div class="laboratorio-informacion">
+
+                    <span class="numero-laboratorio">
+                        LABORATORIO 04
+                    </span>
+
+                    <h2>
+                        Laboratorio 4
+                    </h2>
+
+                    <p class="descripcion-laboratorio">
+                        Laboratorio destinado a la realización
+                        de actividades académicas y prácticas
+                        relacionadas con tecnología.
+                    </p>
+
+
+                    <div class="datos-laboratorio">
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Sistema operativo
+                            </span>
+
+                            <strong>
+                                Windows 11
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Memoria RAM
+                            </span>
+
+                            <strong>
+                                16 GB
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Equipos
+                            </span>
+
+                            <strong>
+                                27 computadores
+                            </strong>
+
+                        </div>
+
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Estado
+                            </span>
+
+                            <strong class="estado pendiente">
+                                Por determinar
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="disponibilidad">
+
+                        <h3>
+                            Disponibilidad
+                        </h3>
+
+                        <p>
+                            La información de horarios y
+                            disponibilidad será incorporada
+                            próximamente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 LABORATORIO 5
+            ========================== -->
+            <article
+                class="laboratorio-detalle tarjeta-laboratorio laboratorio-cerrado-card"
+                id="lab5"
+                data-nombre="Laboratorio 5"
+                data-sistema="cerrado"
+                data-ram="cerrado"
+            >
+
+                <div class="laboratorio-cerrado">
+
+                    <span class="icono-cerrado">
+                        ⚠
+                    </span>
+
+                    <h2>
+                        Laboratorio 5
+                    </h2>
+
+                    <span>
+                        FUERA DE SERVICIO
+                    </span>
+
+                </div>
+
+
+                <div class="laboratorio-informacion">
+
+                    <span class="numero-laboratorio">
+                        LABORATORIO 05
+                    </span>
+
+                    <h2>
+                        Laboratorio 5
+                    </h2>
+
+                    <p class="descripcion-laboratorio">
+                        Este laboratorio se encuentra cerrado
+                        temporalmente y actualmente está fuera
+                        de servicio.
+                    </p>
+
+
+                    <div class="datos-laboratorio">
+
+                        <div class="dato">
+
+                            <span class="dato-titulo">
+                                Estado
+                            </span>
+
+                            <strong class="estado cerrado">
+                                Fuera de servicio
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="disponibilidad">
+
+                        <h3>
+                            Disponibilidad
+                        </h3>
+
+                        <p>
+                            Este laboratorio no se encuentra
+                            disponible para uso actualmente.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             SIN RESULTADOS
+        ========================== -->
+        <section
+            class="sin-resultados"
+            id="sinResultados"
+            style="display: none;"
+        >
+
+            <div>
+
+                <span>
+                    🔎
+                </span>
+
+                <h2>
+                    No encontramos laboratorios
+                </h2>
+
+                <p>
+                    Intenta cambiar los filtros o realizar otra búsqueda.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MODAL DE GALERÍA
+        ========================== -->
+        <div
+            id="galeriaModal"
+            class="galeria-modal"
+            aria-hidden="true"
+        >
+
+            <button
+                type="button"
+                id="cerrarGaleria"
+                class="galeria-cerrar"
+                aria-label="Cerrar galería"
+            >
+                ✕
+            </button>
+
+
+            <div class="galeria-contenido">
+
+                <button
+                    type="button"
+                    id="fotoAnterior"
+                    class="galeria-flecha galeria-anterior"
+                    aria-label="Fotografía anterior"
+                >
+                    ‹
+                </button>
+
+
+                <div class="galeria-imagen-contenedor">
+
+                    <img
+                        id="imagenGaleria"
+                        src=""
+                        alt=""
+                    >
+
+                    <p id="contadorGaleria">
+                        1 / 2
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="fotoSiguiente"
+                    class="galeria-flecha galeria-siguiente"
+                    aria-label="Fotografía siguiente"
+                >
+                    ›
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         PIE DE PÁGINA
+    ========================== -->
+    <footer>
+
+        <div class="footer-contenido">
+
+            <div class="footer-marca">
+
+                <h3>
+                    INSUCOLAB
+                </h3>
+
+                <p>
+                    Sistema informativo de los laboratorios
+                    de computación del Liceo Insuco de Valparaíso.
+                </p>
+
+            </div>
+
+
+            <div class="footer-enlaces">
+
+                <h4>
+                    Navegación
+                </h4>
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="laboratorios.html">
+                    Laboratorios
+                </a>
+
+                <a href="index.html#informacion">
+                    Información
+                </a>
+
+            </div>
+
+
+            <div class="footer-enlaces">
+
+                <h4>
+                    Proyecto
+                </h4>
+
+                <p>
+                    Proyecto académico de diseño y desarrollo web.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-final">
+
+            <p>
+                © 2026 INSUCOLAB — Proyecto académico
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
