@@ -3,6 +3,7 @@
    Menú móvil
    Filtros y buscador
    Galería de fotografías
+   Formulario de contacto
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -12,60 +13,87 @@ document.addEventListener("DOMContentLoaded", function () {
        MENÚ MÓVIL
        ===================================================== */
 
-    const menuMovil = document.getElementById("menuMovil");
-    const navLinks = document.getElementById("navLinks");
+    const menuMovil =
+        document.getElementById("menuMovil");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
 
     if (menuMovil && navLinks) {
 
-        menuMovil.addEventListener("click", function () {
+        menuMovil.addEventListener(
+            "click",
+            function () {
 
-            const abierto =
-                navLinks.classList.toggle("menu-abierto");
-
-            menuMovil.setAttribute(
-                "aria-expanded",
-                abierto ? "true" : "false"
-            );
-
-            menuMovil.setAttribute(
-                "aria-label",
-                abierto ? "Cerrar menú" : "Abrir menú"
-            );
-
-            menuMovil.textContent =
-                abierto ? "✕" : "☰";
-
-        });
+                const abierto =
+                    navLinks.classList.toggle(
+                        "menu-abierto"
+                    );
 
 
-        /* Cerrar menú al seleccionar una opción */
+                menuMovil.setAttribute(
+                    "aria-expanded",
+                    abierto ? "true" : "false"
+                );
+
+
+                menuMovil.setAttribute(
+                    "aria-label",
+                    abierto
+                        ? "Cerrar menú"
+                        : "Abrir menú"
+                );
+
+
+                menuMovil.textContent =
+                    abierto
+                        ? "✕"
+                        : "☰";
+
+            }
+        );
+
 
         const enlacesMenu =
             navLinks.querySelectorAll("a");
 
-        enlacesMenu.forEach(function (enlace) {
 
-            enlace.addEventListener("click", function () {
+        enlacesMenu.forEach(
+            function (enlace) {
 
-                navLinks.classList.remove("menu-abierto");
+                enlace.addEventListener(
+                    "click",
+                    function () {
 
-                menuMovil.setAttribute(
-                    "aria-expanded",
-                    "false"
+                        navLinks.classList.remove(
+                            "menu-abierto"
+                        );
+
+
+                        menuMovil.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+
+                        menuMovil.setAttribute(
+                            "aria-label",
+                            "Abrir menú"
+                        );
+
+
+                        menuMovil.textContent =
+                            "☰";
+
+                    }
                 );
 
-                menuMovil.setAttribute(
-                    "aria-label",
-                    "Abrir menú"
-                );
-
-                menuMovil.textContent = "☰";
-
-            });
-
-        });
+            }
+        );
 
     }
+
 
 
     /* =====================================================
@@ -73,22 +101,40 @@ document.addEventListener("DOMContentLoaded", function () {
        ===================================================== */
 
     const buscador =
-        document.getElementById("buscadorLaboratorio");
+        document.getElementById(
+            "buscadorLaboratorio"
+        );
+
 
     const filtroSistema =
-        document.getElementById("filtroSistema");
+        document.getElementById(
+            "filtroSistema"
+        );
+
 
     const filtroRam =
-        document.getElementById("filtroRam");
+        document.getElementById(
+            "filtroRam"
+        );
+
 
     const limpiarFiltros =
-        document.getElementById("limpiarFiltros");
+        document.getElementById(
+            "limpiarFiltros"
+        );
+
 
     const cantidadResultados =
-        document.getElementById("cantidadResultados");
+        document.getElementById(
+            "cantidadResultados"
+        );
+
 
     const sinResultados =
-        document.getElementById("sinResultados");
+        document.getElementById(
+            "sinResultados"
+        );
+
 
     const laboratorios =
         document.querySelectorAll(
@@ -100,70 +146,83 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const texto =
             buscador
-                ? buscador.value.toLowerCase().trim()
+                ? buscador.value
+                    .toLowerCase()
+                    .trim()
                 : "";
+
 
         const sistema =
             filtroSistema
                 ? filtroSistema.value
                 : "todos";
 
+
         const ram =
             filtroRam
                 ? filtroRam.value
                 : "todos";
 
+
         let visibles = 0;
 
 
-        laboratorios.forEach(function (laboratorio) {
+        laboratorios.forEach(
+            function (laboratorio) {
 
-            const nombre =
-                (
-                    laboratorio.dataset.nombre || ""
-                ).toLowerCase();
-
-            const sistemaLaboratorio =
-                laboratorio.dataset.sistema || "";
-
-            const ramLaboratorio =
-                laboratorio.dataset.ram || "";
+                const nombre =
+                    (
+                        laboratorio.dataset.nombre ||
+                        ""
+                    )
+                        .toLowerCase();
 
 
-            const coincideTexto =
-                nombre.includes(texto);
+                const sistemaLaboratorio =
+                    laboratorio.dataset.sistema ||
+                    "";
 
 
-            const coincideSistema =
-                sistema === "todos" ||
-                sistemaLaboratorio === sistema;
+                const ramLaboratorio =
+                    laboratorio.dataset.ram ||
+                    "";
 
 
-            const coincideRam =
-                ram === "todos" ||
-                ramLaboratorio === ram;
+                const coincideTexto =
+                    nombre.includes(texto);
 
 
-            if (
-                coincideTexto &&
-                coincideSistema &&
-                coincideRam
-            ) {
+                const coincideSistema =
+                    sistema === "todos" ||
+                    sistemaLaboratorio === sistema;
 
-                laboratorio.style.display = "";
 
-                visibles++;
+                const coincideRam =
+                    ram === "todos" ||
+                    ramLaboratorio === ram;
 
-            } else {
 
-                laboratorio.style.display = "none";
+                if (
+                    coincideTexto &&
+                    coincideSistema &&
+                    coincideRam
+                ) {
+
+                    laboratorio.style.display =
+                        "";
+
+                    visibles++;
+
+                } else {
+
+                    laboratorio.style.display =
+                        "none";
+
+                }
 
             }
+        );
 
-        });
-
-
-        /* Actualizar contador */
 
         if (cantidadResultados) {
 
@@ -174,8 +233,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-
-        /* Mostrar mensaje si no existen resultados */
 
         if (sinResultados) {
 
@@ -189,7 +246,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* Eventos del buscador */
 
     if (buscador) {
 
@@ -200,8 +256,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
-    /* Eventos de los filtros */
 
     if (filtroSistema) {
 
@@ -223,8 +277,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* Botón limpiar filtros */
-
     if (limpiarFiltros) {
 
         limpiarFiltros.addEventListener(
@@ -235,13 +287,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     buscador.value = "";
                 }
 
+
                 if (filtroSistema) {
                     filtroSistema.value = "todos";
                 }
 
+
                 if (filtroRam) {
                     filtroRam.value = "todos";
                 }
+
 
                 filtrarLaboratorios();
 
@@ -251,11 +306,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* Ejecutar una vez al cargar */
-
     if (laboratorios.length > 0) {
+
         filtrarLaboratorios();
+
     }
+
 
 
     /* =====================================================
@@ -267,23 +323,41 @@ document.addEventListener("DOMContentLoaded", function () {
             ".foto-galeria"
         );
 
+
     const galeriaModal =
-        document.getElementById("galeriaModal");
+        document.getElementById(
+            "galeriaModal"
+        );
+
 
     const cerrarGaleria =
-        document.getElementById("cerrarGaleria");
+        document.getElementById(
+            "cerrarGaleria"
+        );
+
 
     const imagenGaleria =
-        document.getElementById("imagenGaleria");
+        document.getElementById(
+            "imagenGaleria"
+        );
+
 
     const contadorGaleria =
-        document.getElementById("contadorGaleria");
+        document.getElementById(
+            "contadorGaleria"
+        );
+
 
     const fotoAnterior =
-        document.getElementById("fotoAnterior");
+        document.getElementById(
+            "fotoAnterior"
+        );
+
 
     const fotoSiguiente =
-        document.getElementById("fotoSiguiente");
+        document.getElementById(
+            "fotoSiguiente"
+        );
 
 
     let fotosActuales = [];
@@ -291,23 +365,28 @@ document.addEventListener("DOMContentLoaded", function () {
     let indiceActual = 0;
 
 
-    /* =====================================================
-       ABRIR GALERÍA
-       ===================================================== */
 
-    function abrirGaleria(laboratorio) {
+    function abrirGaleria(
+        laboratorio
+    ) {
 
         fotosActuales =
             Array.from(fotosGaleria)
-                .filter(function (foto) {
+                .filter(
+                    function (foto) {
 
-                    return foto.dataset.laboratorio ===
-                        laboratorio;
+                        return (
+                            foto.dataset.laboratorio ===
+                            laboratorio
+                        );
 
-                });
+                    }
+                );
 
 
-        if (fotosActuales.length === 0) {
+        if (
+            fotosActuales.length === 0
+        ) {
             return;
         }
 
@@ -319,23 +398,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (galeriaModal) {
 
-            galeriaModal.classList.add("abierto");
+            galeriaModal.classList.add(
+                "abierto"
+            );
+
 
             galeriaModal.setAttribute(
                 "aria-hidden",
                 "false"
             );
 
-            document.body.style.overflow = "hidden";
+
+            document.body.style.overflow =
+                "hidden";
 
         }
 
     }
 
 
-    /* =====================================================
-       MOSTRAR FOTO
-       ===================================================== */
 
     function mostrarFoto() {
 
@@ -355,53 +436,61 @@ document.addEventListener("DOMContentLoaded", function () {
         imagenGaleria.src =
             foto.src;
 
+
         imagenGaleria.alt =
             foto.alt;
 
 
         contadorGaleria.textContent =
-            (indiceActual + 1) +
+            (
+                indiceActual + 1
+            ) +
             " / " +
             fotosActuales.length;
 
     }
 
 
-    /* =====================================================
-       SIGUIENTE FOTO
-       ===================================================== */
 
     function siguienteFoto() {
 
-        if (fotosActuales.length === 0) {
+        if (
+            fotosActuales.length === 0
+        ) {
             return;
         }
 
+
         indiceActual++;
+
 
         if (
             indiceActual >=
             fotosActuales.length
         ) {
+
             indiceActual = 0;
+
         }
+
 
         mostrarFoto();
 
     }
 
 
-    /* =====================================================
-       FOTO ANTERIOR
-       ===================================================== */
 
     function anteriorFoto() {
 
-        if (fotosActuales.length === 0) {
+        if (
+            fotosActuales.length === 0
+        ) {
             return;
         }
 
+
         indiceActual--;
+
 
         if (indiceActual < 0) {
 
@@ -410,14 +499,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
+
         mostrarFoto();
 
     }
 
 
-    /* =====================================================
-       CERRAR GALERÍA
-       ===================================================== */
 
     function cerrarGaleriaFuncion() {
 
@@ -425,42 +512,46 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        galeriaModal.classList.remove("abierto");
+
+        galeriaModal.classList.remove(
+            "abierto"
+        );
+
 
         galeriaModal.setAttribute(
             "aria-hidden",
             "true"
         );
 
-        document.body.style.overflow = "";
+
+        document.body.style.overflow =
+            "";
 
     }
 
 
-    /* =====================================================
-       EVENTOS DE LAS FOTOS
-       ===================================================== */
 
-    fotosGaleria.forEach(function (foto) {
+    fotosGaleria.forEach(
+        function (foto) {
 
-        foto.addEventListener(
-            "click",
-            function () {
+            foto.addEventListener(
+                "click",
+                function () {
 
-                const laboratorio =
-                    foto.dataset.laboratorio;
-
-                abrirGaleria(laboratorio);
-
-            }
-        );
-
-    });
+                    const laboratorio =
+                        foto.dataset.laboratorio;
 
 
-    /* =====================================================
-       EVENTOS DE LOS BOTONES
-       ===================================================== */
+                    abrirGaleria(
+                        laboratorio
+                    );
+
+                }
+            );
+
+        }
+    );
+
 
     if (fotoSiguiente) {
 
@@ -492,10 +583,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       CERRAR AL HACER CLICK FUERA DE LA IMAGEN
-       ===================================================== */
-
     if (galeriaModal) {
 
         galeriaModal.addEventListener(
@@ -517,8 +604,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     /* =====================================================
-       TECLADO
+       TECLADO PARA LA GALERÍA
        ===================================================== */
 
     document.addEventListener(
@@ -535,21 +623,27 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            if (evento.key === "Escape") {
+            if (
+                evento.key === "Escape"
+            ) {
 
                 cerrarGaleriaFuncion();
 
             }
 
 
-            if (evento.key === "ArrowRight") {
+            if (
+                evento.key === "ArrowRight"
+            ) {
 
                 siguienteFoto();
 
             }
 
 
-            if (evento.key === "ArrowLeft") {
+            if (
+                evento.key === "ArrowLeft"
+            ) {
 
                 anteriorFoto();
 
@@ -557,5 +651,82 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     );
+
+
+
+    /* =====================================================
+       FORMULARIO DE CONTACTO
+       ===================================================== */
+
+    const formularioContacto =
+        document.getElementById(
+            "formularioContacto"
+        );
+
+
+    if (formularioContacto) {
+
+        formularioContacto.addEventListener(
+            "submit",
+            function (evento) {
+
+                evento.preventDefault();
+
+
+                const nombre =
+                    document.getElementById(
+                        "nombreContacto"
+                    );
+
+
+                const correo =
+                    document.getElementById(
+                        "correoContacto"
+                    );
+
+
+                const mensaje =
+                    document.getElementById(
+                        "mensajeContacto"
+                    );
+
+
+                if (
+                    !nombre ||
+                    !correo ||
+                    !mensaje
+                ) {
+                    return;
+                }
+
+
+                if (
+                    nombre.value.trim() === "" ||
+                    correo.value.trim() === "" ||
+                    mensaje.value.trim() === ""
+                ) {
+
+                    alert(
+                        "Por favor, completa todos los campos."
+                    );
+
+                    return;
+
+                }
+
+
+                alert(
+                    "¡Gracias por tu mensaje, " +
+                    nombre.value.trim() +
+                    "! El formulario fue recibido correctamente."
+                );
+
+
+                formularioContacto.reset();
+
+            }
+        );
+
+    }
 
 });
