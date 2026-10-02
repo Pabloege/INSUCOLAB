@@ -37,6 +37,7 @@
             </button>
 
             <ul class="nav-links" id="navLinks">
+
                 <li>
                     <a href="index.html" class="activo">
                         Inicio
@@ -54,6 +55,19 @@
                         Información
                     </a>
                 </li>
+
+                <li>
+                    <a href="#sobre-mi">
+                        Sobre mí
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contacto">
+                        Contacto
+                    </a>
+                </li>
+
             </ul>
 
         </nav>
@@ -899,6 +913,290 @@
 
 
         <!-- =========================
+             SOBRE MÍ
+        ========================== -->
+        <section
+            class="seccion seccion-alternativa"
+            id="sobre-mi"
+        >
+
+            <div class="encabezado-seccion">
+
+                <span class="etiqueta">
+                    Sobre mí
+                </span>
+
+                <h2>
+                    Conoce al creador de INSUCOLAB
+                </h2>
+
+                <p>
+                    Información sobre el estudiante responsable del desarrollo
+                    de este proyecto académico.
+                </p>
+
+            </div>
+
+
+            <div class="sobre-mi-contenido">
+
+                <div class="sobre-mi-presentacion">
+
+                    <div class="sobre-mi-icono">
+                        👨‍💻
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Pablo Enrrique Garcia Escobar
+                        </h3>
+
+                        <p class="sobre-mi-cargo">
+                            Estudiante de 4.º medio · Programación
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="sobre-mi-texto">
+
+                    <p>
+                        Soy estudiante de 4.º medio y actualmente estoy
+                        estudiando la carrera de Programación. Me interesa el
+                        desarrollo web y la creación de soluciones digitales
+                        que sean útiles, ordenadas y fáciles de utilizar.
+                    </p>
+
+                    <p>
+                        Actualmente estoy aprendiendo tecnologías como
+                        <strong>HTML5</strong>, <strong>CSS3</strong> y
+                        <strong>JavaScript</strong>, además de herramientas
+                        como <strong>Git</strong> y <strong>GitHub</strong>.
+                    </p>
+
+                    <p>
+                        A futuro, me gustaría continuar desarrollando mis
+                        conocimientos de programación, crear nuevos proyectos
+                        y adquirir experiencia en el desarrollo de software
+                        y aplicaciones web.
+                    </p>
+
+                </div>
+
+
+                <div class="sobre-mi-tecnologias">
+
+                    <span>
+                        HTML5
+                    </span>
+
+                    <span>
+                        CSS3
+                    </span>
+
+                    <span>
+                        JavaScript
+                    </span>
+
+                    <span>
+                        Git
+                    </span>
+
+                    <span>
+                        GitHub
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACTO
+        ========================== -->
+        <section
+            class="seccion"
+            id="contacto"
+        >
+
+            <div class="encabezado-seccion">
+
+                <span class="etiqueta">
+                    Contacto
+                </span>
+
+                <h2>
+                    Ponte en contacto
+                </h2>
+
+                <p>
+                    Si tienes alguna consulta relacionada con INSUCOLAB,
+                    puedes utilizar los siguientes datos de contacto.
+                </p>
+
+            </div>
+
+
+            <div class="contacto-grid">
+
+                <!-- INFORMACIÓN DE CONTACTO -->
+                <div class="contacto-informacion">
+
+                    <div class="contacto-card">
+
+                        <div class="contacto-icono">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Nombre
+                            </h3>
+
+                            <p>
+                                Pablo Enrrique Garcia Escobar
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contacto-card">
+
+                        <div class="contacto-icono">
+                            ✉️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Correo electrónico
+                            </h3>
+
+                            <p>
+                                <a
+                                    href="mailto:PabloEnrriqueGarciaEscobar@gmail.com"
+                                >
+                                    PabloEnrriqueGarciaEscobar@gmail.com
+                                </a>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contacto-card">
+
+                        <div class="contacto-icono">
+                            💻
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Proyecto
+                            </h3>
+
+                            <p>
+                                INSUCOLAB — Sistema informativo de los
+                                laboratorios de computación.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORMULARIO -->
+                <div class="contacto-formulario">
+
+                    <form
+                        id="formularioContacto"
+                        action="#contacto"
+                        method="post"
+                    >
+
+                        <div class="campo-formulario">
+
+                            <label for="nombreContacto">
+                                Nombre
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nombreContacto"
+                                name="nombre"
+                                value="Pablo Enrrique Garcia Escobar"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo-formulario">
+
+                            <label for="correoContacto">
+                                Correo electrónico
+                            </label>
+
+                            <input
+                                type="email"
+                                id="correoContacto"
+                                name="correo"
+                                value="PabloEnrriqueGarciaEscobar@gmail.com"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="campo-formulario">
+
+                            <label for="mensajeContacto">
+                                Mensaje
+                            </label>
+
+                            <textarea
+                                id="mensajeContacto"
+                                name="mensaje"
+                                rows="6"
+                                required
+                            >Hola, me gustaría recibir más información sobre el proyecto INSUCOLAB o realizar alguna consulta relacionada con el sitio web y sus laboratorios de computación.</textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="boton boton-principal"
+                        >
+                            Enviar mensaje
+                        </button>
+
+                        <p class="nota-formulario">
+                            Formulario de contacto del proyecto académico.
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
              AVISO DE INFORMACIÓN
         ========================== -->
         <section class="seccion">
@@ -999,6 +1297,14 @@
 
                 <a href="#informacion">
                     Información
+                </a>
+
+                <a href="#sobre-mi">
+                    Sobre mí
+                </a>
+
+                <a href="#contacto">
+                    Contacto
                 </a>
 
             </div>
